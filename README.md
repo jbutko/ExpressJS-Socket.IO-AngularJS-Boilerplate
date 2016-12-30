@@ -18,6 +18,19 @@ Do not waste your valuable time with every new project by configuring app and fo
 * UI-Router for seamless AngularJS routing
 
 ***
+## SETUP
+```bash
+git clone git@github.com:jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate.git
+```
+*Server*
+```bash
+cd server&&npm install
+```
+*Client*
+```bash
+cd client&&npm install
+```
+- install all npm and bower dependencies
 
 ## Contact
 Copyright (C) 2016 Jozef Butko<br>
