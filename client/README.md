@@ -3,18 +3,13 @@ Component oriented AngularJS client app based on [AngularJS-Boilerplate](https:/
 
 # Features
 * SASS support including sourceMaps
-* Minimal CSS styling of the view
 * Gulp watch, build and local server tasks
-* localStorage service for set, get, remove data
+* localStorage service
 * queryService $http wrapper to handle REST API requests
 * clear folder structure
+* Minimal CSS styling of the view
 * minified CSS and JS build files
 * google analytics snippet
-
-## Download
-```bash
-git clone git@github.com:jbutko/ExpressJS-Socket.io-AngularJS-Boilerplate.git
-```
 
 ## 1. Setup
 ```bash
@@ -28,21 +23,19 @@ npm install
 ```bash
 gulp
 ```
-- all SCSS/HTML will be watched for changes and injected into browser thanks to BrowserSync
+- all SCSS/HTML/JS will be watched for changes and lint errors with browser reloading
 
 ## 3. Build production version
 ```bash
 gulp build
 ```
-- this will process following tasks:
+- build task includes:
 * clean _build folder
-* compile SASS files, minify and uncss compiled css
+* compile and minify SASS files
 * copy and optimize images
 * minify and copy all HTML files into $templateCache
-* build index.html
-* minify and copy all JS files
-* copy fonts
-* show build folder size
+* build index.html with useming package
+* copy assets
 
 ## 4. Start webserver without watch task
 ```bash
