@@ -1,0 +1,29 @@
+{
+  "name": "expressjs-io-angularjs-boilerplate-client",
+  "description": "ExpressJS, Socket.IO & AngularJS Boilerplate - Client",
+  "version": "1.0.0",
+  "private": false,
+  "main": "app.js",
+  "authors": [
+    "jozef butko / www.jozefbutko.com"
+  ],
+  "keywords": [
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-sanitize": "1.6.1",
+    "ng-dialog": "~0.6.4",
+    "angular-ui-router": "1.0.0-beta.3",
+    "angular-socket-io": "~0.7.0",
+    "angularUtils-pagination": "angular-utils-pagination#~0.11.1"
+  }
+}

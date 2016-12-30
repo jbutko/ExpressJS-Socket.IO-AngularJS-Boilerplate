@@ -1,0 +1,165 @@
+<div class="container-fluid user form">
+
+	<div class="row" ng-if="vm.actionType == 'loadUser'">
+		<div class="col-md-12">
+			<a ui-sref="editUser({ userId: vm.user._id })" title="edit user">
+			    Edit user
+			</a>
+		</div>
+	</div>
+
+	<!-- user form -->
+	<div>
+
+		<form
+			ng-submit="vm.submitUserForm(vm.user, vm.user._id)"
+			name="vm.userForm"
+			role="form"
+			id="user"
+			novalidate
+		>
+
+			<div ng-if="vm.actionType != 'createUser'" class="row">
+				<label for="user-id" class="col-md-5">ID</label>
+				<div class="col-md-5">
+					<input
+						type="text"
+						ng-model="vm.user._id"
+						ng-disabled="'always'"
+						name="user-id"
+						id="user-id"
+						autocomplete="off"
+						placeholder="User ID"
+					>
+				</div>
+			</div>
+
+			<div class="row">
+				<label for="username" class="col-md-5">Username</label>
+				<div class="col-md-5">
+					<input
+						type="text"
+						ng-model="vm.user.username"
+						ng-disabled="vm.actionType != 'createUser'"
+						name="username"
+						id="username"
+						autocomplete="off"
+						placeholder="Username"
+						required
+					>
+				</div>
+			</div>
+
+			<div class="row" ng-if="vm.actionType == 'createUser'">
+				<label for="password" class="col-md-5">Password</label>
+				<div class="col-md-5">
+					<input
+						type="password"
+						ng-model="vm.user.password"
+						ng-disabled="vm.actionType != 'createUser'"
+						name="password"
+						id="password"
+						autocomplete="off"
+						placeholder="Password"
+						required
+					>
+				</div>
+			</div>
+
+			<div class="row">
+				<label for="firstName" class="col-md-5">First name</label>
+				<div class="col-md-5">
+					<input
+						type="text"
+						ng-model="vm.user.firstName"
+						ng-disabled="vm.actionType == 'loadUser'"
+						name="firstName"
+						id="firstName"
+						autocomplete="off"
+						placeholder="First name"
+					>
+				</div>
+			</div>
+
+			<div class="row">
+				<label for="surname" class="col-md-5">Surname</label>
+				<div class="col-md-5">
+					<input
+						type="text"
+						ng-model="vm.user.surname"
+						ng-disabled="vm.actionType == 'loadUser'"
+						name="surname"
+						id="surname"
+						autocomplete="off"
+						placeholder="Surname"
+					>
+				</div>
+			</div>
+
+			<div class="row">
+				<label for="email" class="col-md-5">Email</label>
+				<div class="col-md-5">
+					<input
+						type="email"
+						ng-model="vm.user.email"
+						ng-disabled="vm.actionType == 'loadUser'"
+						name="email"
+						id="email"
+						autocomplete="off"
+						placeholder="Email"
+					>
+				</div>
+			</div>
+
+			<div class="row">
+				<label for="role" class="col-md-5">Role</label>
+				<div class="col-md-5">
+					<input
+						type="text"
+						ng-model="vm.user.role"
+						ng-disabled="vm.actionType == 'loadUser'"
+						name="role"
+						id="role"
+						autocomplete="off"
+						placeholder="Role"
+						ng-if="vm.actionType == 'loadUser'"
+					>
+					<select
+						type="text"
+						ng-model="vm.user.role"
+						ng-disabled="vm.actionType == 'loadUser'"
+						name="role"
+						id="role"
+						autocomplete="off"
+						placeholder="Role"
+						ng-if="vm.actionType != 'loadUser'"
+						required
+					>
+						<option value="user">user</option>
+						<option value="admin">admin</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-5 col-md-offset-5">
+					<button
+						type="submit"
+						ng-disabled="vm.userForm.$invalid"
+						ng-if="vm.actionType == 'createUser'"
+					>
+						Create
+					</button>
+
+					<button
+						type="submit"
+						ng-disabled="vm.userForm.$invalid"
+						ng-if="vm.actionType == 'editUser'"
+					>
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

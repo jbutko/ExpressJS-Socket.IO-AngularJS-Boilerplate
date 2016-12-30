@@ -1,0 +1,46 @@
+<div class="container-fluid auth">
+
+	<!-- login -->
+	<div class="row" ng-if="!vm.user">
+		<div class="col-xs-12">
+			<form
+				ng-submit="vm.login(vm.username, vm.password)"
+				name="login"
+				id="login"
+			>
+				<input
+					type="text"
+					ng-model="vm.username"
+					name="username"
+					id="username"
+					autocomplete="off"
+					placeholder="Name"
+				>
+
+				<input
+					type="password"
+					ng-model="vm.password"
+					name="password"
+					id="password"
+					autocomplete="off"
+					placeholder="Password"
+				>
+
+				<div>Don't have an account? Please <a ui-sref="createUser">register</a></div>
+
+				<button
+					type="submit"
+				>
+					Log in
+				</button>
+
+			</form>
+		</div>
+	</div>
+
+	<!-- logout -->
+	<div class="row" ng-if="vm.user">
+		<button ng-click="vm.logout()">Log out</button>
+	</div>
+</div>
+

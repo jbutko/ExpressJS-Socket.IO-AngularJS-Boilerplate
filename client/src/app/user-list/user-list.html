@@ -1,0 +1,30 @@
+<div class="container-fluid user-list list">
+
+	<!-- header -->
+	<div class="row table-header">
+		<div class="col-md-3">_id</div>
+		<div class="col-md-3">username</div>
+		<div class="col-md-3">role</div>
+		<div class="col-md-3">action</div>
+	</div>
+
+	<!-- table body -->
+	<div class="table">
+		<div
+			class="list-item row"
+			ng-repeat="user in vm.users track by user._id">
+
+			<a ui-sref="displayUser({ userId: user._id })" title="display user">
+				<div class="col-md-3">{{ user._id }}</div>
+				<div class="col-md-3">{{ user.username }}</div>
+				<div class="col-md-3">{{ user.role }}</div>
+			</a>
+
+			<div class="col-md-3">
+				<a ui-sref="editUser({ userId: user._id })" class="icon" title="edit user">
+				    Edit user
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

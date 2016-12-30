@@ -1,0 +1,38 @@
+{
+  "name": "expressjs-io-angularjs-boilerplate-server",
+  "description": "ExpressJS, Socket.IO & AngularJS Boilerplate - Server",
+  "version": "1.0.0",
+  "private": false,
+  "main": "app.js",
+  "scripts": {
+    "start": "set NODE_ENV=development&&set PORT=5000&&nodemon --debug ./src/app/app.js",
+    "startprod": "pm2 start process.json",
+    "startdev": "pm2 start process-dev.json",
+    "starttest": "set NODE_ENV=test&&set PORT=5555&&node --debug ./src/app/app.js",
+    "db": "mongod",
+    "test": "mocha ./src/**/*.test.js --watch --reporter spec"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.0",
+    "body-parser": "~1.15.2",
+    "compression": "^1.6.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.1",
+    "express": "~4.14.0",
+    "express-paginate": "^0.2.2",
+    "express-validator": "^3.1.2",
+    "helmet": "^3.2.0",
+    "jsonwebtoken": "^7.2.1",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.5",
+    "mongoose-paginate": "^5.0.3",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mockgoose": "^6.0.8",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
+  }
+}

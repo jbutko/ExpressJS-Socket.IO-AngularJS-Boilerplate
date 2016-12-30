@@ -1,0 +1,8 @@
+node_modules
+bower_components
+_build
+.idea
+.jsbeautifyrc
+style.css
+style.min.css
+*.log

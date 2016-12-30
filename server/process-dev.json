@@ -1,0 +1,15 @@
+{
+  "apps" : [{
+    "name"        : "app",
+    "script"      : "./src/app/app.js",
+    "watch"       : false,
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 5000
+    },
+    "autorestart": true,
+    "log_date_format": "DD.MM.YYYY HH:mm Z",
+    "error_file": "./logs/dev/error.log",
+    "out_file": "./logs/dev/out.log"
+  }]
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-csp="" ng-app="boilerplate"> <!--<![endif]-->
+
+	<head>
+
+		<base href="/">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>ExpressJS, Socket.io &amp; AngularJS Boilerplate</title>
+		<meta name="description" content="Do not waste your valuable time with every new project by configuring app and folder structure - use ExpressJS, Socket.IO & AngularJS Boilerplate and start working straight on what really matters.">
+
+		<!-- mobile meta -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+		<!--[if IE]>
+			<link rel="shortcut icon" href="favicon.ico">
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+		<meta name="msapplication-TileColor" content="#f01d4f">
+
+		<!-- fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Lora:400,700&subset=latin-ext" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Scope+One&subset=latin-ext" rel="stylesheet">
+
+		<!-- CSS -->
+		<!-- build:css css/style.min.css -->
+		<link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog.min.css" />
+		<link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css" />
+		<link rel="stylesheet" type="text/css" href="bower_components/ng-dialog/css/ngDialog-theme-plain.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+		<!-- endbuild -->
+
+	</head>
+
+	<body class="main-wrapper">
+
+		<!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Navigation -->
+		<main-nav></main-nav>
+
+		<!-- Main view -->
+		<div ui-view></div>
+
+	</body>
+
+	<!-- Vendors -->
+	<!-- build:nonangularlibs js/nonangularlibs.js -->
+	<!-- endbuild -->
+
+	<!-- Non-angular libraries -->
+	<!-- build:libs js/libs.js -->
+	<!-- endbuild -->
+
+	<!-- <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script> -->
+	<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+
+	<!-- Angular external libraries for application -->
+	<!-- build:angularlibs js/angularlibs.js -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-socket-io/socket.min.js"></script>
+	<script type="text/javascript" src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+	<!-- endbuild -->
+
+
+	<!-- Angular components -->
+	<!-- build:appcomponents js/appcomponents.js -->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/app.routes.js"></script>
+	<script type="text/javascript" src="config/config.js"></script>
+	<script type="text/javascript" src="app/_shared/services/socket.service.js"></script>
+	<script type="text/javascript" src="app/_shared/services/localStorage.service.js"></script>
+	<script type="text/javascript" src="app/_shared/services/queryService.service.js"></script>
+	<script type="text/javascript" src="app/_shared/services/utils.service.js"></script>
+	<script type="text/javascript" src="app/_shared/services/auth.interceptor.js"></script>
+	<script type="text/javascript" src="app/main-nav/main.nav.component.js"></script>
+	<script type="text/javascript" src="app/home/home.component.js"></script>
+	<script type="text/javascript" src="app/change-password/changePassword.component.js"></script>
+	<script type="text/javascript" src="app/auth/auth.component.js"></script>
+	<script type="text/javascript" src="app/user-list/userList.component.js"></script>
+	<script type="text/javascript" src="app/user/user.component.js"></script>
+	<!-- endbuild -->
+
+	<!-- Application sections -->
+	<!-- build:mainapp js/mainapp.js -->
+	<!-- endbuild -->
+
+	<!-- templates from $templateCache -->
+	<!-- build:templates -->
+	<!-- endbuild -->
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+	    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	    e.src='https://www.google-analytics.com/analytics.js';
+	    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+	</script>
+
+</html>

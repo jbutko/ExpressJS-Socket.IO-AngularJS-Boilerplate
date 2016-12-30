@@ -1,0 +1,45 @@
+<!-- Main navigation -->
+<div class="container-fluid main-nav">
+
+	<header>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- login/logout -->
+				<div class="auth pull-right">
+					<auth></auth>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- logo -->
+				<h1 class="logo">
+					<a ui-sref="home" rel="nofollow">ExpressJS, Socket.io &amp; AngularJS Boilerplate</a>
+				</h1>
+			</div>
+			<div class="col-xs-12">
+				<!-- logo -->
+				<h4 class="logo">
+					Everything you need to start your new realtime MEAN app!
+				</h4>
+			</div>
+		</div>
+
+		<!-- navigation -->
+		<div class="row" ng-if="vm.user">
+			<ul>
+				<li>
+					<a ui-sref="createUser" class="create-user-link" ui-sref-opts="{reload: true, notify: true}">Create user</a>
+				</li>
+				<li>
+					<a ui-sref="changePassword" class="change-password-link">Change password</a>
+				</li>
+				<li>
+					<a ui-sref="users" class="users-link" ui-sref-opts="{reload: true, notify: true}">User list</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+</div>

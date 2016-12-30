@@ -1,0 +1,66 @@
+{
+  "name": "expressjs-angularjs-boilerplate",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "ExpressJS, Socket.IO & AngularJS Boilerplate",
+  "main": "src/app/app.js",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "connect": "^3.5.0",
+    "connect-livereload": "^0.6.0",
+    "connect-modrewrite": "^0.9.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uncss": "^1.0.6",
+    "gulp-usemin": "^0.3.26",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "opn": "^4.0.2",
+    "run-sequence": "^1.2.2",
+    "serve-index": "^1.8.0",
+    "serve-static": "^1.11.1",
+    "tiny-lr": "^1.0.3",
+    "watch": "^1.0.1"
+  },
+  "scripts": {
+    "postinstall": "npm i gulp-sass --save-dev&&npm i gulp-imagemin --save-dev&&bower install --no-interactive --allow-root"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "boilerplate",
+    "front-end",
+    "app",
+    "single-page",
+    "spa"
+  ],
+  "author": "Jozef Butko",
+  "docs": "https://github.com/jbutko/ExpressJS-Socket.io-AngularJS-Boilerplate/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/jbutko/ExpressJS-Socket.io-AngularJS-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/jbutko/ExpressJS-Socket.io-AngularJS-Boilerplate",
+  "dependencies": {}
+}

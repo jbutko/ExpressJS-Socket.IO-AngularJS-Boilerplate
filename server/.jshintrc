@@ -1,0 +1,18 @@
+{
+  "boss": true,
+  "curly": false,
+  "eqnull": true,
+  "immed": true,
+  "latedef": false,
+  "newcap": false,
+  "noarg": true,
+  "node": true,
+  "sub": true,
+  "eqeqeq": false,
+  "undef": true,
+  "predef": [
+    "describe",
+    "it",
+    "should"
+  ]
+}

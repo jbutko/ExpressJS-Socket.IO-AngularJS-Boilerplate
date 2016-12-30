@@ -1,0 +1,128 @@
+/******************************************************************
+
+Mobile
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background-color: $gray;
+	color: $text-color;
+	font-family: $font;
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	display: inline-block;
+	margin-right: 50px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a,
+a:visited {
+	color: $link-color;
+	text-decoration: none;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+		text-decoration: underline;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/*********************
+ELEMENTS
+*********************/
+
+
+
+/*********************
+LISTS
+*********************/
+
+.list {
+
+	h3 {
+		margin: 30px 0;
+	}
+
+	.active {
+		border: 1px solid blue;
+	}
+
+	.icon {
+
+		img {
+			width: 20px;
+		}
+	}
+
+	.list-item {
+	  margin-bottom: 10px;
+	  border: 1px solid #ecd6d6;
+	  padding: 10px;
+	}
+
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+	background-color: $black;
+	color: $light-gray;
+}
