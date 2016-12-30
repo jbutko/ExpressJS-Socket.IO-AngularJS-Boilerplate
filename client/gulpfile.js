@@ -35,20 +35,7 @@ gulp.task('images', function() {
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
-      baseDir: "./src/",
-      // middleware: [
-      //   modRewrite(['^([^.]+)$ /index.html [L]']),
-      //   // function(req, res, next) {
-      //   //   res.setHeader('Access-Control-Allow-Origin', '*');
-      //   //   res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
-      //   //   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-      //   //   res.setHeader("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-      //   //   next();
-      //   // }
-      // ],
-      // socket: {
-      //     domain: 'localhost:5000'
-      // },
+      baseDir: './src/',
     },
     notify: false,
     port: 4000,
@@ -175,20 +162,8 @@ gulp.task('sass:build', function() {
     //     /\.owl-prev/
     //   ]
     // }))
-    // .pipe($.minifyCss({
-    //   keepBreaks: true,
-    //   aggressiveMerging: false,
-    //   advanced: false
-    // }))
     .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest('_build/css'));
-    // .pipe(s)
-    // .pipe($.notify({
-    //   onLast: true,
-    //   message: function() {
-    //     return 'Total CSS size ' + s.prettySize;
-    //   }
-    // }));
 });
 
 // index.html build
@@ -221,7 +196,7 @@ gulp.task('templates', function() {
     ])
     // .pipe($.minifyHtml())
     .pipe($.angularTemplatecache({
-      module: 'wott'
+      module: 'boilerplate'
     }))
     .pipe(gulp.dest('_build/js'));
 });
@@ -245,7 +220,7 @@ gulp.task('build:size', function() {
     }));
 });
 
-// jshint notify
+// jshint notification
 function notifyJshintError(file) {
   var ignoredFiles = [
     'angucomplete-alt.js'
@@ -269,13 +244,13 @@ function notifyJshintError(file) {
   return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
 }
 
+// JS files linting
 gulp.task('lint', function() {
   return gulp.src('src/app/**/*.js')
     .pipe($.jshint('.jshintrc'))
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.notify(notifyJshintError));
 });
-
 
 // default task to be run with `gulp` command
 gulp.task('default', ['browser-sync', 'sass', 'minify-css', 'lint'], function() {
@@ -288,7 +263,6 @@ gulp.task('default', ['browser-sync', 'sass', 'minify-css', 'lint'], function() 
   gulp.watch(['./src/app/**/*.js', './src/config/*.js'], ['lint', 'bs-reload']);
   gulp.watch(['./styles/**/*.scss', './src/**/*.scss'], ['sass', 'minify-css']);
 });
-
 
 /**
  * build task:
