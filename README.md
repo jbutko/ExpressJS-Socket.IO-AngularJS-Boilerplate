@@ -4,11 +4,20 @@ Do not waste your valuable time with every new project by configuring app and fo
 
 ***
 
-FEATURES:
-* Component oriented AngularJS client app built on version 1.6.x
-* ExpressJS API with JSON webtoken authentification
-* Socket.IO for realtime messages implement on both AngularJS client as well as ExpressJS API
+## FEATURES:
+*Server*
+* ExpressJS API with JSON web token (JWT) authentification
+* Socket.IO for realtime messages implemented on both AngularJS client as well as ExpressJS API
 * Mocha test runner to test your ExpressJS app
+* Integrated packages for paginated responses and request parameters checking
+
+*Client*
+* Component oriented AngularJS client app built on version 1.6.x
+* SASS preprocessor with bootstrap grid system
+* Gulp with browser-sync for serving app including tasks for SASS files compilation, JShint linting or complete build version
+* UI-Router for seamless AngularJS routing
+
+***
 
 ## Contact
 Copyright (C) 2016 Jozef Butko<br>
@@ -20,7 +29,7 @@ Released under MIT license
 ## Changelog
 ### 1.0.0
 - initial release<br>
-29.12.2016
+30.12.2016
 
 
 
