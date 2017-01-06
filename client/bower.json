@@ -3,7 +3,7 @@
   "description": "ExpressJS, Socket.IO & AngularJS Boilerplate - Client",
   "version": "1.0.0",
   "private": false,
-  "main": "app.js",
+  "main": ".src/app/app.js",
   "authors": [
     "jozef butko / www.jozefbutko.com"
   ],

@@ -1,6 +1,6 @@
 # ExpressJS, Socket.IO & AngularJS Boilerplate
 
-Do not waste your valuable time with every new project by configuring app and folder structure - use *ExpressJS, Socket.IO & AngularJS Boilerplate* and start working straight on what really matters.
+Do not waste your valuable time whne you are starting with new project by configuring app and folder structure - use *ExpressJS, Socket.IO & AngularJS Boilerplate* and start working straight on what really matters.
 
 ***
 
@@ -9,12 +9,12 @@ Do not waste your valuable time with every new project by configuring app and fo
 * ExpressJS API with JSON web token (JWT) authentification
 * Socket.IO for realtime messages implemented on both AngularJS client as well as ExpressJS API
 * Mocha test runner to test your ExpressJS app
-* Integrated packages for paginated responses and request parameters checking
+* Built in packages for paginated responses or request parameters checking with express-validator
 
 *Client*
 * Component oriented AngularJS client app built on version 1.6.x
 * SASS preprocessor with bootstrap grid system
-* Gulp with browser-sync for serving app including tasks for SASS files compilation, JShint linting or complete build version
+* Gulp with browser-sync for serving app including tasks for SASS files compilation, JShint linting or build task for generating production version&&npm start
 * UI-Router for seamless AngularJS routing
 
 ***
@@ -24,16 +24,15 @@ git clone git@github.com:jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate.git
 ```
 *Server*
 ```bash
-cd server&&npm install
+cd server&&npm install&&npm start
 ```
 *Client*
 ```bash
-cd client&&npm install
+cd client&&npm install&&gulp
 ```
-- install all npm and bower dependencies
 
 ## Contact
-Copyright (C) 2016 Jozef Butko<br>
+Copyright (C) 2017 Jozef Butko<br>
 [www.jozefbutko.com/resume](http://www.jozefbutko.com)<br>
 [www.github.com/jbutko](http://www.github.com/jbutko)<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)<br>

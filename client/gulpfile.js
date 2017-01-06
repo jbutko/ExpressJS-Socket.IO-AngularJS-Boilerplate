@@ -1,15 +1,3 @@
-/**
- * The build process consists of following steps:
- * 1. clean /_build folder
- * 2. compile SASS files, minify and uncss compiled css
- * 3. copy and minimize images
- * 4. minify and copy all HTML files into $templateCache
- * 5. build index.html
- * 6. minify and copy all JS files
- * 7. copy fonts
- * 8. show build folder size
- *
- */
 var gulp = require('gulp');
 var browserSync = require('browser-sync')
 var reload = browserSync.reload;
@@ -17,7 +5,6 @@ var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
 var modRewrite = require('connect-modrewrite');
-
 
 // optimize images
 gulp.task('images', function() {
@@ -39,42 +26,21 @@ gulp.task('browser-sync', function() {
     },
     notify: false,
     port: 4000,
-  });
-
-});
-
-// minify JS
-gulp.task('minify-js', function() {
-  gulp.src('js/*.js')
-    .pipe($.uglify())
-    .pipe(gulp.dest('./_build/'));
+  })
 });
 
 // minify CSS
 gulp.task('minify-css', function() {
-  gulp.src(['./styles/**/*.css', '!./styles/**/*.min.css'])
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.minifyCss({keepBreaks:true}))
+  return gulp.src(['./styles/**/*.css', '!./styles/**/*.min.css'])
+    .pipe($.rename({ suffix: '.min' }))
+    .pipe($.minifyCss({ keepBreaks: true }))
     .pipe(gulp.dest('./styles/'))
     .pipe(gulp.dest('./_build/css/'));
 });
 
-// minify HTML
-gulp.task('minify-html', function() {
-  var opts = {
-    comments: true,
-    spare: true,
-    conditionals: true
-  };
-
-  gulp.src('./**/.html')
-    .pipe($.minifyHtml(opts))
-    .pipe(gulp.dest('./_build/'));
-});
-
 // copy fonts from a module outside of our project (like Bower)
 gulp.task('fonts', function() {
-  gulp.src('./src/assets/fonts/**/*.{ttf,woff,eof,eot,svg}')
+  return gulp.src('./src/assets/fonts/**/*.{ttf,woff,eof,eot,svg}')
     .pipe($.changed('./_build/fonts'))
     .pipe(gulp.dest('./_build/fonts'));
 });
@@ -106,17 +72,15 @@ gulp.task('server-build', function(done) {
 });
 
 // delete build folder
-gulp.task('clean:build', function (cb) {
-  del([
+gulp.task('clean:build', function(cb) {
+  return del([
     './_build/'
-    // if we don't want to clean any file we can use negate pattern
-    //'!dist/mobile/deploy.json'
   ], cb);
 });
 
 // concat files
 gulp.task('concat', function() {
-  gulp.src('./js/*.js')
+  return gulp.src('./js/*.js')
     .pipe($.concat('scripts.js'))
     .pipe(gulp.dest('./_build/'));
 });
@@ -145,24 +109,12 @@ gulp.task('sass', function() {
 
 // SASS Build task
 gulp.task('sass:build', function() {
-  var s = $.size();
-
-  return gulp.src('styles/style.scss')
+  return gulp.src('./styles/style.scss')
     .pipe($.sass({
       style: 'compact'
     }))
     .pipe($.autoprefixer('last 3 version'))
-    // .pipe($.uncss({
-    //   html: ['./index.html', './views/**/*.html', './components/**/*.html'],
-    //   ignore: [
-    //     '.index',
-    //     '.slick',
-    //     /\.owl+/,
-    //     /\.owl-next/,
-    //     /\.owl-prev/
-    //   ]
-    // }))
-    .pipe($.rename({suffix: '.min'}))
+    .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest('_build/css'));
 });
 
@@ -174,19 +126,15 @@ gulp.task('usemin', function() {
     .pipe($.htmlReplace({
       'templates': '<script type="text/javascript" src="js/templates.js"></script>'
     }))
-    .pipe($.usemin())
-    // .pipe($.usemin({
-    //   css: [$.minifyCss(), 'concat'],
-    //   libs: [],
-    //   nonangularlibs: [],
-    //   angularlibs: [],
-    //   appcomponents: [],
-    //   mainapp: []
-    // }))
+    .pipe($.usemin({
+      css: [$.minifyCss(), 'concat'],
+      angularlibs: [$.uglify()],
+      appcomponents: [$.uglify()],
+    }))
     .pipe(gulp.dest('./_build/'));
 });
 
-// make templateCache from all HTML files
+// add HTML files to $templateChace
 gulp.task('templates', function() {
   return gulp.src([
       './src/**/*.html',
@@ -194,30 +142,16 @@ gulp.task('templates', function() {
       '!node_modules/**/*.*',
       '!_build/**/*.*'
     ])
-    // .pipe($.minifyHtml())
+    .pipe($.minifyHtml())
     .pipe($.angularTemplatecache({
-      module: 'boilerplate'
+      module: 'boilerplate' // change this if you name your main app module differently
     }))
     .pipe(gulp.dest('_build/js'));
 });
 
-// reload all Browsers
+// reload browser on changes
 gulp.task('bs-reload', function() {
   browserSync.reload();
-});
-
-// calculate build folder size
-gulp.task('build:size', function() {
-  var s = $.size();
-
-  return gulp.src('./_build/**/*.*')
-    .pipe(s)
-    .pipe($.notify({
-      onLast: true,
-      message: function() {
-        return 'Total build size ' + s.prettySize;
-      }
-    }));
 });
 
 // jshint notification
@@ -244,7 +178,7 @@ function notifyJshintError(file) {
   return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
 }
 
-// JS files linting
+// lint JS files
 gulp.task('lint', function() {
   return gulp.src('src/app/**/*.js')
     .pipe($.jshint('.jshintrc'))
@@ -255,7 +189,7 @@ gulp.task('lint', function() {
 // default task to be run with `gulp` command
 gulp.task('default', ['browser-sync', 'sass', 'minify-css', 'lint'], function() {
   gulp.watch('./styles/*.css', function(file) {
-    if (file.type === "changed") {
+    if (file.type === 'changed') {
       reload(file.path);
     }
   });
@@ -265,7 +199,14 @@ gulp.task('default', ['browser-sync', 'sass', 'minify-css', 'lint'], function() 
 });
 
 /**
- * build task:
+ * Build process consists of following steps:
+ * 1. clean /_build folder
+ * 2. compile SASS files, minify and uncss compiled css
+ * 3. copy and optimize images
+ * 4. minify and copy all HTML files into $templateCache
+ * 5. copy index.html
+ * 6. minify, concat and copy all JS files
+ * 7. copy fonts
  */
 gulp.task('build', function(callback) {
   runSequence(
