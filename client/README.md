@@ -1,5 +1,5 @@
-# AngularJS-Boilerplate
-Component oriented AngularJS client app based on [AngularJS-Boilerplate](https://github.com/jbutko/AngularJS-Boilerplate)
+# Component-based AngularJS client
+Component-based AngularJS client app based on [AngularJS-Boilerplate](https://github.com/jbutko/AngularJS-Boilerplate)
 
 # Features
 * SASS support including sourceMaps
@@ -43,7 +43,6 @@ gulp server
 gulp server-build
 ```
 
-## Contact
 Copyright (C) 2017 Jozef Butko<br>
 [www.jozefbutko.com](http://www.jozefbutko.com)<br>
 [www.github.com/jbutko](http://www.github.com/jbutko)<br>
