@@ -44,6 +44,10 @@ Copyright (C) 2017 Jozef Butko<br>
 Released under MIT license
 
 ## Changelog
+### 1.0.1
+- 1.0.1: cleanup<br>
+07.01.2017
+
 ### 1.0.0
 - 1.0.0: initial release<br>
 07.01.2017
