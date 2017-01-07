@@ -42,3 +42,6 @@ jspm_packages
 # config
 bower_components
 .jsbeautifyrc
+
+# FE build
+_build

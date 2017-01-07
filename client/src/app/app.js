@@ -42,7 +42,9 @@
     // this runs on every route change
     $transitions.onStart({}, function(trans) {
       trans.promise.then(function(state) {
-        // authorization can be handled here (admin routes etc.)
+
+        // route authorization can be handled here (admin routes etc.)
+        // you should have `role` attribute in routes you want to restrict in `app.routes.js`
         // var user = localStorage.get('user');
         // var isAuthorized = state.role && state.role.indexOf(user.role) > -1;
         // if (state.role && !isAuthorized)

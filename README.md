@@ -10,6 +10,8 @@ Do not waste your valuable time whne you are starting with new project by config
 * Socket.IO for realtime messages implemented on both AngularJS client as well as ExpressJS API
 * Mocha test runner to test your ExpressJS app
 * Built in packages for paginated responses or request parameters checking with express-validator
+* Postman collection to test out API endpoints in Postman desktop app
+* PM2 process files in JSON format for dev/production enviroments
 
 *Client*
 * Component oriented AngularJS client app built on version 1.6.x

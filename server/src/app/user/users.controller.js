@@ -182,7 +182,7 @@
           'role': bodyParams.role,
           }
         },
-        { upsert: false, new: true, fields: { password: 0 } })
+        { upsert: false, new: true, fields: { password: 0 }, runValidators: true, setDefaultsOnInsert: true })
       .exec((err, user) => {
         if (err) return next({ err: err, status: 400 });
         if (!user) return next({

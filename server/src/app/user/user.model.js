@@ -44,7 +44,10 @@
     role: {
       type: String,
       default: 'user',
-      enum: ['user', 'admin']
+      enum: {
+        values: ['user', 'admin'],
+        message: 'Only "user" or "admin" roles are allowed.'
+      }
     },
     createdAt: {
       type: Date,

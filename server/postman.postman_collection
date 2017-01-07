@@ -1,0 +1,173 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ExpressJS, IO & AngularJS Boilerplate",
+		"_postman_id": "5e7254d3-9572-5523-8301-b6fa614f4655",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Authenticate user",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users/authenticate",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"johndoe\",\n  \"password\": \"asdf\"\n}"
+						},
+						"description": "<strong>METHOD:</strong>\n`POST`\n\n<strong>BODY PARAMS:</strong>\n```\n{\n  \"username\": \"johndoe\",\n  \"password\": \"asdf\"\n}\n```\n<strong>SUCCESS STATUS:</strong>\n`200`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "<strong>METHOD:</strong>\nGET\n\nAuthorization header required:\n`Authorization: token`\n<br>\n<strong>SUCCESS STATUS:</strong>\n`200`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get users (with pagination)",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users?page=1&limit=2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "<strong>METHOD:</strong>\nGET\n\n<strong>PARAMS:</strong>\npage, limit\n\nAuthorization header required:\n`Authorization: token`\n<br>\n<strong>SUCCESS STATUS:</strong>\n`200`"
+					},
+					"response": []
+				},
+				{
+					"name": "Create new user",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"johndoe\",\n  \"firstName\": \"john\",\n  \"surname\": \"doe\",\n  \"password\": \"asdf\",\n  \"email\": \"email@email.io\",\n  \"role\": \"user\"\n}"
+						},
+						"description": "<strong>METHOD:</strong>\n`POST`\n\n<strong>BODY:</strong>\n```\n{\n  \"username\": \"johndoe3\",\n  \"firstName\": \"john\",\n  \"surname\": \"doe\",\n  \"password\": \"asdf\",\n  \"email\": \"email@email.io\",\n  \"role\": \"user\"\n}\n```\n<br>\n<strong>SUCCESS STATUS:</strong>\n`201`"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by ID",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users/58644dcf17c3be235ce546ff",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"john123\",\r\n  \"surname\": \"doe\",\r\n  \"email\": \"email@email.io\"\r\n}\r\n"
+						},
+						"description": "<strong>METHOD:</strong>\n`PUT`\n\n<strong>BODY:</strong>\n```\n{\n  \"firstName\": \"john123\",\n  \"surname\": \"doe\",\n  \"email\": \"email@email.io\",\n  \"role\": \"user\"\n}\n\n```\nAuthorization header required:\n`Authorization: token`\n<br>\n<strong>SUCCESS STATUS:</strong>\n`200`"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users/58644dcf17c3be235ce546ff",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "<strong>METHOD:</strong>\n`GET`\n\nAuthorization header required:\n`Authorization: token`\n<br>\n<strong>SUCCESS STATUS:</strong>\n`200`"
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"url": "http://{{url}}:{{port}}/api/v1/users/change-password",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"asdf\",\r\n  \"confirmPassword\": \"asdf\"\r\n}\r\n"
+						},
+						"description": "<strong>METHOD:</strong>\n`PUT`\n<br>\n<strong>PARAMS:</strong>\n```\n{\n  \"password\": \"asdf\",\n  \"confirmPassword\": \"asdf\"\n}\n```\nAuthorization header required:\n`Authorization: token`\n<br>\n<strong>SUCCESS STATUS:</strong>\n`204`"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

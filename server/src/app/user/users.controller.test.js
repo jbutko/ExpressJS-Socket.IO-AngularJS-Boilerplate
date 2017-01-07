@@ -116,7 +116,7 @@
         .expect(404, done);
     });
 
-    it('should get user /users/:userId GET', (done) => {
+    it('should get single user on /users/:userId GET', (done) => {
       api
         .get(`/users/${userId}`)
         .set('Content-Type', 'application/json')
