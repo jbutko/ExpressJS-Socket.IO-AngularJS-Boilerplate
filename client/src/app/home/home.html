@@ -1,18 +1,44 @@
-<div class="container-fluid">
+<div class="container-fluid home">
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <p>Do not waste your valuable time with every new project by configuring app and folder structure - use <strong>ExpressJS, Socket.io &amp; AngularJS Boilerplate</strong> and start working straight on what really matters.</p>
 
-	<div class="row">
+            <h3>FEATURES:</h3>
+            <h4>Server:</h4>
+            <ul>
+                <li>* ExpressJS API with JSON web token (JWT) authentification</li>
+                <li>* Socket.IO for realtime messages implemented both on ExpressJS API as well as AngularJS client</li>
+                <li>* Mocha test runner to test your ExpressJS app</li>
+                <li>* Routes for create user, authenticate user, get user, get users, change password and update user</li>
+                <li>* Tests for user controller</li>
+                <li>* Built in packages for paginated responses or request parameters checking with express-validator</li>
+                <li>* Postman collection to test out API endpoints in Postman desktop app</li>
+                <li>* PM2 process files in JSON format for dev/production enviroments</li>
+            </ul>
 
-		<div class="col-md-5 col-md-offset-3 text-center">
-			<p>Do not waste your valuable time with every new project by configuring app and folder structure - use <strong>ExpressJS, Socket.io &amp; AngularJS Boilerplate</strong> and start working straight on what really matters.</p>
+            <h4>Client:</h4>
+            <ul>
+	            <li>* Component oriented AngularJS client app built on version 1.6.x</li>
+	            <li>* SASS preprocessor with bootstrap grid system</li>
+	            <li>* Gulp with browser-sync for serving app including tasks for SASS files compilation, JShint linting or build task for generating minified production version</li>
+	            <li>* UI-Router for seamless AngularJS routing</li>
+            </ul>
 
+            <h4>Setup:</h4>
+            <div>
+            	<strong>Clone: </strong>
+            	<span class="code">git clone git@github.com:jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate.git</span>
+            </div>
 
-			<h3>FEATURES:</h3>
-			<ul>
-				<li>* Component oriented AngularJS client app built on version 1.6.x</li>
-				<li>* ExpressJS API with JSON webtoken authentification</li>
-				<li>* Socket.io for realtime messages implement on both AngularJS client as well as ExpressJS API</li>
-				<li>* Mocha test runner to test your ExpressJS app</li>
-			</ul>
-		</div>
-	</div>
+            <div>
+            	<strong>Server: </strong>
+            	<span class="code">cd server&&npm install&&npm start</span>
+            </div>
+
+            <div>
+            	<strong>Client: </strong>
+            	<span class="code">cd client&&npm install&&gulp</span>
+            </div>
+        </div>
+    </div>
 </div>

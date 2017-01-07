@@ -1,10 +1,14 @@
 .main-nav {
-	background-color: $blue;
+	background-color: #86C3AF;
 	padding: 20px;
 	width: 100%;
 	text-align: center;
 
-	a {
-		color: $black;
+	li {
+		display: inline-block;
+	}
+
+	.logo {
+		margin-bottom: 5px;
 	}
 }

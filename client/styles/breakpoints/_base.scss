@@ -29,13 +29,6 @@ html {
   box-sizing: inherit;
 }
 
-a {
-
-	&:hover {
-		cursor: pointer;
-	}
-}
-
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -43,7 +36,7 @@ ul {
 }
 
 li {
-	display: inline-block;
+	display: block;
 	margin-right: 50px;
 
 	&:last-child {
@@ -57,13 +50,14 @@ LINK STYLES
 
 a,
 a:visited {
-	color: $link-color;
+	color: lighten($link-color, 5%);
 	text-decoration: none;
 
 	/* on hover */
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $link-hover;
-		text-decoration: underline;
+		cursor: pointer;
 	}
 
 	/* on click */

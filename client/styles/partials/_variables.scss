@@ -6,17 +6,15 @@ Variables
 
 $black:             #231f20;
 $white:             #fff;
-$blue:            	#00AFF0;
-
-$light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #5c6b80;
+$disabled-gray:     #cfcfcf;
 
+// links
+$text-color:        #5c6b80;
 $link-color:        $black;
 $link-hover:        darken($link-color, 9%);
 
-$border-color:      #ccc;
-$disabled-gray:     #cfcfcf;
+// alerts
 $alert-red:			red;
 $alert-green:		#645564;
 $alert-blue:		blue;
