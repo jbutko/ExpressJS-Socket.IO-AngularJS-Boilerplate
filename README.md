@@ -16,6 +16,8 @@ Do not waste your valuable time when you are starting with new project by config
 
 *Client* [documentation](https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate/blob/master/client/README.md)
 * Component oriented AngularJS client app built on version 1.6.x
+* Token based user authetification (Auth component and Auth interceptor)
+* Routes for user signup,change user password, user list and update user
 * SASS preprocessor with bootstrap grid system
 * Gulp with browser-sync for serving app including tasks for SASS files compilation, JShint linting or build task for generating minified production version
 * UI-Router for seamless AngularJS routing
