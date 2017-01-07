@@ -45,3 +45,4 @@ bower_components
 
 # FE build
 _build
+_config.yml
