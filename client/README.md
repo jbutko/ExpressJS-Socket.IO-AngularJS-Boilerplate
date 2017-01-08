@@ -1,5 +1,5 @@
 # Component-based AngularJS v1 client
-Component-based AngularJS client app based on [AngularJS-Boilerplate](https://github.com/jbutko/AngularJS-Boilerplate)
+Component-based AngularJS v1 client app based on [AngularJS-Boilerplate](https://github.com/jbutko/AngularJS-Boilerplate)
 
 # Features
 * SASS support including sourceMaps
