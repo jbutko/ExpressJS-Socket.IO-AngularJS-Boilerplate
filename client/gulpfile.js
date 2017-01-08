@@ -18,7 +18,7 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./_build/assets/img'));
 });
 
-// browser-sync task, only cares about compiled CSS
+// browser-sync task
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
@@ -38,7 +38,7 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./_build/css/'));
 });
 
-// copy fonts from a module outside of our project (like Bower)
+// copy fonts
 gulp.task('fonts', function() {
   return gulp.src('./src/assets/fonts/**/*.{ttf,woff,eof,eot,svg}')
     .pipe($.changed('./_build/fonts'))
@@ -58,7 +58,7 @@ gulp.task('server', function(done) {
   }, done);
 });
 
-// start webserver from _build folder to check how it will look in production
+// start webserver from _build folder to preview built version of the app
 gulp.task('server-build', function(done) {
   return browserSync({
     server: {
@@ -71,7 +71,7 @@ gulp.task('server-build', function(done) {
   }, done);
 });
 
-// delete build folder
+// clear build folder
 gulp.task('clean:build', function(cb) {
   return del([
     './_build/'
@@ -118,7 +118,7 @@ gulp.task('sass:build', function() {
     .pipe(gulp.dest('_build/css'));
 });
 
-// index.html build
+// generate and copy index.html
 // script/css concatenation
 gulp.task('usemin', function() {
   return gulp.src('./src/index.html')
