@@ -1,4 +1,4 @@
-# Component-based AngularJS client
+# Component-based AngularJS v1 client
 Component-based AngularJS client app based on [AngularJS-Boilerplate](https://github.com/jbutko/AngularJS-Boilerplate)
 
 # Features
