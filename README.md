@@ -5,7 +5,7 @@ Do not waste your valuable time when you are starting with new project by config
 ***
 
 ## FEATURES:
-*Server* [documentation](https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate/blob/master/server/README.md)
+*Server* [[documentation]](https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate/blob/master/server/README.md)
 * ExpressJS API with JSON web token (JWT) authentification
 * Socket.IO for realtime messages implemented both on ExpressJS API as well as AngularJS client
 * Mocha test runner to test your ExpressJS app
@@ -14,7 +14,7 @@ Do not waste your valuable time when you are starting with new project by config
 * Postman collection to test out API endpoints in Postman desktop app
 * PM2 process files in JSON format for dev/production enviroments
 
-*Client* [documentation](https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate/blob/master/client/README.md)
+*Client* [[documentation]](https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate/blob/master/client/README.md)
 * Component oriented AngularJS client app built on version 1.6.x
 * Token based user authetification (Auth component and Auth interceptor)
 * Routes for user signup,change user password, user list and update user
@@ -25,15 +25,15 @@ Do not waste your valuable time when you are starting with new project by config
 ***
 ## SETUP
 ```bash
-git clone git@github.com:jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate.git
+git clone https://github.com/jbutko/ExpressJS-Socket.IO-AngularJS-Boilerplate.git myProject
 ```
 *Server*
 ```bash
-cd server&&npm install&&npm start
+cd myProject/server && npm install && npm start
 ```
 *Client*
 ```bash
-cd client&&npm install&&gulp
+cd myProject/client && npm install && gulp
 ```
 
 ## Contact
@@ -51,6 +51,3 @@ Released under MIT license
 ### 1.0.0
 - 1.0.0: initial release<br>
 07.01.2017
-
-
-
